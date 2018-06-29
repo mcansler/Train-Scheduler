@@ -32,11 +32,32 @@ $("#add-train-btn").on("click", function(event) {
     var firstTrainConverted = moment(firstTrain, "hh:mm");
     var diffTime = moment().diff(moment(firstTrainConverted), "minutes");
     var tRemainder = diffTime % frequency;
-    var minutesAway = frequency - tRemainder;
+    var minutesTilTrain = frequency - tRemainder;
+    var minutesAway = minutesTilTrain;
     var nextTrain = moment().add(minutesAway, "minutes");
     var nextTrain2 = moment().add(2, "minutes")
     var nextArrival = moment(nextTrain).format("HH:mm");
 
+//var countDownDate = new Date("Sep 5, 2018 15:37:25").getTime();
+
+
+// // Update the count down every 1 second
+// var minutesAway = setInterval(function() {
+
+//   // Get todays date and time
+//   var now = new Date().getTime();
+
+//   // Find the distance between now an the count down date
+//   var distance = minutesTilTrain - now;
+
+//   // Time calculations for days, hours, minutes and seconds
+//   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+//   return minutes;
+  
+//   }, 1000);
+  
+console.log(minutesAway);
     // Creates local "temporary" object for holding entry data
     
     var newTrain = {
